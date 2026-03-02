@@ -43,14 +43,14 @@ app.get("/api/geocode", async (req, res) => {
     }
 
     res.json({ results });
-  } catch (e: any) {
+  } 
+  catch (e: any) {
     res.status(400).json({ error: e?.message ?? "Bad request" });
   }
 });
 
-/**
- * Weather endpoint (lat/lon -> current + 5-day daily forecast)
- * Open-Meteo Forecast API: https://api.open-meteo.com/v1/forecast?... daily=...
+/* Weather endpoint (lat/lon -> current + 5-day daily forecast)
+ with Open-Meteo Forecast API: https://api.open-meteo.com/v1/forecast
  */
 app.get("/api/weather", async (req, res) => {
   try {
@@ -64,14 +64,13 @@ app.get("/api/weather", async (req, res) => {
     url.searchParams.set("latitude", String(lat));
     url.searchParams.set("longitude", String(lon));
 
-    // current
+    //current
     url.searchParams.set("current", "temperature_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m");
 
-    // daily (5-day)
+    //daily(5-day)
     url.searchParams.set("daily", "weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,wind_speed_10m_max");
     url.searchParams.set("forecast_days", "5");
 
-    // auto timezone makes “days” line up with the location
     url.searchParams.set("timezone", "auto");
 
     const r = await fetch(url.toString());
@@ -79,7 +78,8 @@ app.get("/api/weather", async (req, res) => {
 
     const data = await r.json();
     res.json(data);
-  } catch (e: any) {
+  } 
+  catch (e: any) {
     res.status(400).json({ error: e?.message ?? "Bad request" });
   }
 });
