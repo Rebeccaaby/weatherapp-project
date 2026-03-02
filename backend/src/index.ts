@@ -8,6 +8,14 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 4000;
 
+app.get("/", (_req, res) => {
+  res.json({
+    ok: true,
+    service: "weather-backend",
+    endpoints: ["/api/geocode?q=...", "/api/weather?lat=...&lon=..."],
+  });
+});
+
 /* Geocoding the user query (city/zip/landmark text) using
    Open-Meteo Geocoding API: https://geocoding-api.open-meteo.com/v1/search
 */
