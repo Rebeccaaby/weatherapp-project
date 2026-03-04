@@ -68,13 +68,13 @@ Note: The backend may take a few seconds to wake up on the first request due to 
 
 1. Clone the repository
 
-HTTPS: \\
-git clone https://github.com/Rebeccaaby/weatherapp-project.git \\
-cd weatherapp-project \\
+HTTPS:  
+git clone https://github.com/Rebeccaaby/weatherapp-project.git  
+cd weatherapp-project  
 
-SSH: \\
-git@github.com:Rebeccaaby/weatherapp-project.git
-cd weatherapp-project
+SSH:  
+git@github.com:Rebeccaaby/weatherapp-project.git  
+cd weatherapp-project  
 
 2. Environment Variables: 
 The backend requires environment variables to configure the database connection. Create a .env file inside the backend folder.
