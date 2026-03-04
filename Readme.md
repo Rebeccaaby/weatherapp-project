@@ -127,7 +127,7 @@ Users can:
 Saved weather requests can be exported as: JSON/CSV/Markdown/PDF
 
 ## API Endpoints
-1. GET /api/geocode?q=<location>  (Please update or change `location` to name of a city)
+1. GET /api/geocode?q=location  (Please update or change `location` to name of a city)
 2. GET /api/weather?lat=<lat>&lon=<lon>
 3. POST /api/requests
 4. GET /api/requests
