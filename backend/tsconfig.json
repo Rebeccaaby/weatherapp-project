@@ -1,44 +1,56 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
-    // "outDir": "./dist",
+    "rootDir": "./src",
+    "outDir": "./dist",
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
-    "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
+    "module": "commonjs",
+    "target": "es2020",
+    "moduleResolution": "node",
 
-    // Other Outputs
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
+    "types": ["node"],
+    "esModuleInterop": true,
 
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
     "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-    "skipLibCheck": true,
-  }
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "prisma.config.ts"]
 }
+// {
+//   // Visit https://aka.ms/tsconfig to read more about this file
+//   "compilerOptions": {
+//     // File Layout
+//     "rootDir": "./src",
+//     "outDir": "./dist",
+
+//     // "module": "nodenext",
+//     // "target": "esnext",
+//     // "types": [],
+//     // For nodejs:
+//     // "lib": ["esnext"],
+//     // "types": ["node"],
+//     // and npm install -D @types/nod
+
+//     "module": "commonjs",
+//     "target": "es2020",
+//     "types": ["node"],
+//     "esModuleInterop": true,
+
+//     "sourceMap": true,
+//     "declaration": false,
+//     "declarationMap": false,
+
+//     // Stricter Typechecking Options
+//     "noUncheckedIndexedAccess": true,
+//     "exactOptionalPropertyTypes": true,
+
+//     "strict": true,
+//     "jsx": "react-jsx",
+//     "verbatimModuleSyntax": true,
+//     "isolatedModules": true,
+//     "noUncheckedSideEffectImports": true,
+//     "moduleDetection": "force",
+//     "skipLibCheck": true,
+//   },
+//   "include": ["src"]
+// }

@@ -12,8 +12,8 @@ app.use(express.json());
 const allowed = [
   "http://localhost:3000",
   "http://localhost:5173",
-  process.env.FRONTEND_URL, //for render 
-].filter(Boolean);
+  process.env.FRONTEND_URL,
+].filter((x): x is string => Boolean(x));
 
 app.use(
   cors({
@@ -139,6 +139,10 @@ app.post("/api/requests", async (req, res) => {
       timezone = geo.timezone;
     }
 
+    if (latitude == null || longitude == null) {
+      return res.status(400).json({ error: "Missing coordinates after geocoding." });
+    }
+
     const daily = await fetchDailyRange(latitude, longitude, body.startDate, body.endDate);
 
     const created = await prisma.weatherRequest.create({
@@ -147,7 +151,7 @@ app.post("/api/requests", async (req, res) => {
         locationName,
         latitude,
         longitude,
-        timezone,
+        timezone: timezone ?? null,
         startDate: body.startDate,
         endDate: body.endDate,
         dailyJson: JSON.stringify(daily),
@@ -238,7 +242,7 @@ app.put("/api/requests/:id", async (req, res) => {
     let endDate = patch.endDate ?? existing.endDate;
     let latitude = existing.latitude;
     let longitude = existing.longitude;
-    let timezone = existing.timezone ?? undefined;
+    let timezone = existing.timezone ?? null;
 
     //re-validation
     if (patch.queryText) {
