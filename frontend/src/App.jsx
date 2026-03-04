@@ -303,7 +303,7 @@ export default function App() {
               style={{ padding: 10, width: 260 }}
             />
             <div style={{ fontSize: 12, opacity: 0.7 }}>
-              Note: City, State/ City is fine (Geocoding normalization done).
+              Note: City, State/ City / Zip Code is fine (Geocoding normalization done).
             </div>
           </div>
 
