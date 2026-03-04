@@ -29,7 +29,13 @@ app.get("/", (_req, res) => {
   res.json({
     ok: true,
     service: "weather-backend",
-    endpoints: ["/api/geocode?q=...", "/api/weather?lat=...&lon=..."],
+    message: "Weather API backend is running",
+    documentation: "/api",
+    endpoints: {
+      geocode: "/api/geocode?q=<location>",
+      weather: "/api/weather?lat=<lat>&lon=<lon>",
+      requests: "/api/requests"
+    }
   });
 });
 

@@ -2,6 +2,17 @@
 
 This is a full-stack weather application that allows users to retrieve real-time weather data, view forecasts, save weather requests with date ranges, and visualize the saved locations on a map. The application integrates external weather APIs, persistent storage, and a frontend interface.
 
+## Live Application
+Open the Vercel link to use the app.
+
+Frontend (User Interface):
+https://weatherapp-project-seven.vercel.app
+
+Backend API: The backend service is hosted on Render and exposes REST API endpoints used by the frontend.
+https://weatherapp-project-d8k6.onrender.com
+
+Note: The backend may take a few seconds to wake up on the first request due to Render free-tier cold start.
+
 ## Features:
 - Current Weather and Forecast
 - View current weather conditions for a location
@@ -57,11 +68,13 @@ This is a full-stack weather application that allows users to retrieve real-time
 
 1. Clone the repository
 
+HTTPS:
 git clone https://github.com/Rebeccaaby/weatherapp-project.git
 cd weatherapp-project
 
-or using SSH, you can use below url once SSH token is created:
+SSH:
 git@github.com:Rebeccaaby/weatherapp-project.git
+cd weatherapp-project
 
 2. Environment Variables: 
 The backend requires environment variables to configure the database connection. Create a .env file inside the backend folder.
@@ -72,7 +85,7 @@ After creating the file add the following variable to configure Prisma to use a 
     1. cd backend
     2. npm install
     3. npx prisma generate
-    3. npx prisma dp push
+    3. npx prisma db push
     4. npm run dev
 
     5. Backend will run on:
