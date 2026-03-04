@@ -5,10 +5,10 @@ This is a full-stack weather application that allows users to retrieve real-time
 ## Live Application
 Open the Vercel link to use the app.
 
-Frontend (User Interface):
+Frontend (User Interface):  
 https://weatherapp-project-seven.vercel.app
 
-Backend API: The backend service is hosted on Render and exposes REST API endpoints used by the frontend.
+Backend API: The backend service is hosted on Render and exposes REST API endpoints used by the frontend.  
 https://weatherapp-project-d8k6.onrender.com
 
 Note: The backend may take a few seconds to wake up on the first request due to Render free-tier cold start.
@@ -73,12 +73,12 @@ git clone https://github.com/Rebeccaaby/weatherapp-project.git
 cd weatherapp-project  
 
 SSH:  
-git@github.com:Rebeccaaby/weatherapp-project.git  
+git clone git@github.com:Rebeccaaby/weatherapp-project.git  
 cd weatherapp-project  
 
 2. Environment Variables: 
-The backend requires environment variables to configure the database connection. Create a .env file inside the backend folder.
-After creating the file add the following variable to configure Prisma to use a local SQLite database file:
+The backend requires environment variables to configure the database connection. Create a .env file inside the backend folder.  
+After creating the file add the following variable to configure Prisma to use a local SQLite database file:  
     DATABASE_URL="file:./dev.db"
 
 3. Backend Setup: Follow the commands one after the other, below to setup the backend with all libraires and tools to run application:
@@ -88,7 +88,7 @@ After creating the file add the following variable to configure Prisma to use a 
     3. npx prisma db push
     4. npm run dev
 
-    5. Backend will run on:
+    5. Backend will run on:  
         http://localhost:4000
     
     6. Example API calls to test:
@@ -105,9 +105,9 @@ After creating the file add the following variable to configure Prisma to use a 
 ## Application Functionality:
 
 ### Step 1 — Get Weather
-Users can:
-    - Click Use my location
-    - Enter a city name and click Get weather
+Users can:  
+    - Click Use my location  
+    - Enter a city name and click Get weather  
 
 The frontend:
 - Calls /api/geocode
@@ -115,9 +115,9 @@ The frontend:
 - Calls /api/weather
 
 ### Step 2 — Save Weather Request
-Users can save:
-    - Location
-    - Date range
+Users can save:  
+    - Location  
+    - Date range  
 
 The backend:
 - Validates the location
@@ -125,16 +125,16 @@ The backend:
 - Stores results in SQLite DB
 
 ### Step 3 — View Saved Requests
-Saved locations appear in the list. Selecting a location:
-    - Updates the map
-    - Displays saved daily temperatures
-    - Loads current weather
+Saved locations appear in the list. Selecting a location:  
+    - Updates the map  
+    - Displays saved daily temperatures  
+    - Loads current weather  
 
 ### Step 4 — Edit or Delete Requests
-Users can:
-    - Modify location or date range
-    - Delete saved requests
-    - The backend updates the database accordingly
+Users can:  
+    - Modify location or date range  
+    - Delete saved requests  
+    - The backend updates the database accordingly  
 
 ### Step 5 — Export Data
 Saved weather requests can be exported as: JSON/CSV/Markdown/PDF
