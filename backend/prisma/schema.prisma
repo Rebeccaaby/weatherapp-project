@@ -1,0 +1,26 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model WeatherRequest {
+  id           String   @id @default(cuid())
+  queryText    String
+  locationName String
+  latitude     Float
+  longitude    Float
+  timezone     String?
+  startDate    String   // YYYY-MM-DD
+  endDate      String   // YYYY-MM-DD
+  units        String   @default("metric") // simple can update later
+  dailyJson    String   
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}

@@ -10,14 +10,23 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@prisma/adapter-better-sqlite3": "^7.4.2",
+    "@prisma/client": "^7.4.2",
+    "better-sqlite3": "^12.6.2",
     "cors": "^2.8.6",
     "express": "^5.2.1",
+    "leaflet": "^1.9.4",
+    "pdfkit": "^0.17.2",
+    "react-leaflet": "^5.0.0",
     "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^25.3.3",
+    "@types/pdfkit": "^0.17.5",
+    "dotenv": "^17.3.1",
+    "prisma": "^7.4.2",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
   }
