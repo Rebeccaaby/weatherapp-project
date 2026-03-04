@@ -68,11 +68,11 @@ Note: The backend may take a few seconds to wake up on the first request due to 
 
 1. Clone the repository
 
-HTTPS:
-git clone https://github.com/Rebeccaaby/weatherapp-project.git
-cd weatherapp-project
+HTTPS: \\
+git clone https://github.com/Rebeccaaby/weatherapp-project.git \\
+cd weatherapp-project \\
 
-SSH:
+SSH: \\
 git@github.com:Rebeccaaby/weatherapp-project.git
 cd weatherapp-project
 
