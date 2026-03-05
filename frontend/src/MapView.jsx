@@ -1,5 +1,5 @@
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
@@ -37,7 +37,7 @@ export default function MapPreview({ lat, lon, label }) {
           attribution='&copy; OpenStreetMap contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={[lat, lon]}>
+        <Marker position={[lat, lon]} icon={icon}>
           <Popup>{label || "Selected location"}</Popup>
         </Marker>
       </MapContainer>
