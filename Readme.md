@@ -5,7 +5,7 @@ This is a full-stack weather application that allows users to retrieve real-time
 ## Live Application
 Open the Vercel link to use the app.
 
-Frontend (User Interface):  
+Frontend (User Interface): The web app will take a minute to load fully and connect with the backend as well. Refresh as needed to get it running.
 https://weatherapp-project-seven.vercel.app
 
 Backend API: The backend service is hosted on Render and exposes REST API endpoints used by the frontend.  
