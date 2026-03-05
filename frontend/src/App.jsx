@@ -64,6 +64,8 @@ export default function App() {
   const [wxError, setWxError] = useState("");
   const [wxLocation, setWxLocation] = useState("");
   const [wxCoords, setWxCoords] = useState(null);
+
+  const [showInfo, setShowInfo] = useState(false);
   
 
   async function refresh() {
@@ -225,7 +227,45 @@ export default function App() {
     setWxCoords({ lat: selected.latitude, lon: selected.longitude });
 
     fetchWeather(selected.latitude, selected.longitude);
-  }, [selectedId]); // or [selected]
+  }, [selectedId]); 
+
+  const infoWrapStyle = {
+    position: "absolute",
+    top: 16,
+    right: 16,
+    display: "inline-flex",
+    alignItems: "center",
+  };
+
+  const infoBtnStyle = {
+    width: 34,
+    height: 34,
+    borderRadius: "999px",
+    border: "1px solid rgba(0,0,0,0.15)",
+    background: "rgba(255,255,255,0.9)",
+    cursor: "default",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontWeight: 800,
+    userSelect: "none",
+  };
+
+  const tooltipStyle = {
+    position: "absolute",
+    top: 42,
+    right: 0,
+    width: 320,
+    padding: 12,
+    borderRadius: 12,
+    background: "white",
+    border: "1px solid rgba(0,0,0,0.12)",
+    boxShadow: "0 10px 25px rgba(0,0,0,0.12)",
+    textAlign: "left",
+    fontSize: 13,
+    lineHeight: 1.35,
+    zIndex: 50,
+  };
 
 
   return (
@@ -251,8 +291,63 @@ export default function App() {
         padding: 28,
         boxShadow: "0 10px 30px rgba(0,0,0,0.12)",
         textAlign: "center",
+        position: "relative",
       }}
     >
+
+      <div
+        style={infoWrapStyle}
+        onMouseEnter={() => setShowInfo(true)}
+        onMouseLeave={() => setShowInfo(false)}
+      >
+        <div style={infoBtnStyle} aria-label="Info" title="About this app">
+          i
+        </div>
+
+        {showInfo && (
+          <div style={tooltipStyle}>
+            <div style={{ fontWeight: 800, marginBottom: 6 }}>About this app</div>
+
+            <div style={{ marginBottom: 8 }}>
+              <span style={{ fontWeight: 700 }}>Built by:</span> Rebecca Abraham
+            </div>
+
+            <div style={{ fontWeight: 700, marginBottom: 4 }}>Product Manager Accelerator</div>
+            <div style={{ opacity: 0.9 }}>
+              <p>The Product Manager Accelerator Program is designed to support PM professionals through every stage of their careers. From students looking for entry-level jobs to Directors looking to take on a leadership role, our program has helped over hundreds of students fulfill their career aspirations.
+              Our Product Manager Accelerator community are ambitious and committed. Through our program they have learnt, honed and developed new PM and leadership skills, giving them a strong foundation for their future endeavors.
+              Here are the examples of services we offer. Check out our website (link under my profile) to learn more about our services.</p>
+
+              <p>🚀 PMA Pro
+              End-to-end product manager job hunting program that helps you master FAANG-level Product Management skills, conduct unlimited mock interviews, and gain job referrals through our largest alumni network. 25% of our offers came from tier 1 companies and get paid as high as $800K/year. 
+
+              🚀 AI PM Bootcamp
+              Gain hands-on AI Product Management skills by building a real-life AI product with a team of AI Engineers, data scientists, and designers. We will also help you launch your product with real user engagement using our 100,000+ PM community and social media channels. 
+
+              🚀 PMA Power Skills
+              Designed for existing product managers to sharpen their product management skills, leadership skills, and executive presentation skills
+
+              🚀 PMA Leader
+              We help you accelerate your product management career, get promoted to Director and product executive levels, and win in the board room. 
+
+              🚀 1:1 Resume Review
+              We help you rewrite your killer product manager resume to stand out from the crowd, with an interview guarantee.Get started by using our FREE killer PM resume template used by over 14,000 product managers. https://www.drnancyli.com/pmresume
+
+              🚀 We also published over 500+ free training and courses. Please go to my YouTube channel https://www.youtube.com/c/drnancyli and Instagram @drnancyli to start learning for free today.</p>
+            </div>
+
+            <div style={{ marginTop: 10 }}>
+              <a
+                href="https://www.linkedin.com/school/pmaccelerator/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn: Product Manager Accelerator
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
       
       <div style={{ marginBottom: 18 }}>
         <h1 style={{ margin: 0, fontSize: 42 }}>Weather Information App</h1>
@@ -586,5 +681,6 @@ export default function App() {
       </div>
     </div>
   </div>
+
 );
 }
